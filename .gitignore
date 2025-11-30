@@ -1,3 +1,22 @@
 env/
 credentials.json
 token.pickle
+
+# Environment variables (contains database credentials)
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Database backups
+*.sql.backup
+backup.sql
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
