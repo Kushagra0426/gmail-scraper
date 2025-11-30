@@ -583,5 +583,3 @@ For more information, see:
 - [Gmail API Python Quickstart](https://developers.google.com/gmail/api/quickstart/python)
 - [Gmail API Reference](https://developers.google.com/gmail/api/reference/rest)
 - [PostgreSQL Documentation](https://www.postgresql.org/docs/)
-- **EMAIL_PROCESSOR_README.md** - Detailed rule processor documentation
-- **RULES_REFERENCE.md** - Quick reference for rule syntax
