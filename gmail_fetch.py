@@ -21,7 +21,8 @@ from googleapiclient.errors import HttpError
 load_dotenv()
 
 # Gmail API scopes
-SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
+# Use gmail.modify to allow marking as read/unread and moving messages
+SCOPES = ['https://www.googleapis.com/auth/gmail.modify']
 
 
 class DatabaseManager:

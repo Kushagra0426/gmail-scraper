@@ -1,0 +1,150 @@
+{
+  "rules": [
+    {
+      "description": "Testing Neon email",
+      "predicate": "all",
+      "conditions": [
+        {
+          "field": "from",
+          "predicate": "contains",
+          "value": "email.neon.tech"
+        },
+        {
+          "field": "subject",
+          "predicate": "contains",
+          "value": "get started"
+        },
+        {
+          "field": "date_received",
+          "predicate": "less_than",
+          "value": 2,
+          "unit": "days"
+        }
+      ],
+      "actions": [
+        {
+          "type": "move",
+          "mailbox": "INBOX"
+        },
+        {
+          "type": "mark_read"
+        }
+      ]
+    },
+    {
+      "description": "Rule 1",
+      "predicate": "all",
+      "conditions": [
+        {
+          "field": "from",
+          "predicate": "contains",
+          "value": "tenmiles.com"
+        },
+        {
+          "field": "subject",
+          "predicate": "contains",
+          "value": "Interview"
+        },
+        {
+          "field": "date_received",
+          "predicate": "less_than",
+          "value": 2,
+          "unit": "days"
+        }
+      ],
+      "actions": [
+        {
+          "type": "move",
+          "mailbox": "INBOX"
+        },
+        {
+          "type": "mark_read"
+        }
+      ]
+    },
+    {
+      "description": "Mark newsletters as read",
+      "predicate": "any",
+      "conditions": [
+        {
+          "field": "from",
+          "predicate": "contains",
+          "value": "newsletter"
+        },
+        {
+          "field": "subject",
+          "predicate": "contains",
+          "value": "unsubscribe"
+        }
+      ],
+      "actions": [
+        {
+          "type": "mark_read"
+        }
+      ]
+    },
+    {
+      "description": "Archive old promotional emails",
+      "predicate": "all",
+      "conditions": [
+        {
+          "field": "from",
+          "predicate": "contains",
+          "value": "promo"
+        },
+        {
+          "field": "date_received",
+          "predicate": "greater_than",
+          "value": 30,
+          "unit": "days"
+        }
+      ],
+      "actions": [
+        {
+          "type": "mark_read"
+        },
+        {
+          "type": "move",
+          "mailbox": "TRASH"
+        }
+      ]
+    },
+    {
+      "description": "Mark urgent emails from specific domain",
+      "predicate": "all",
+      "conditions": [
+        {
+          "field": "from",
+          "predicate": "contains",
+          "value": "@important.com"
+        },
+        {
+          "field": "subject",
+          "predicate": "does_not_contain",
+          "value": "marketing"
+        }
+      ],
+      "actions": [
+        {
+          "type": "mark_unread"
+        }
+      ]
+    },
+    {
+      "description": "Filter specific sender",
+      "predicate": "all",
+      "conditions": [
+        {
+          "field": "from",
+          "predicate": "equals",
+          "value": "specific@example.com"
+        }
+      ],
+      "actions": [
+        {
+          "type": "mark_read"
+        }
+      ]
+    }
+  ]
+}
